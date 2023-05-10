@@ -1,5 +1,5 @@
 Flow report for Flappybirds_Top
-Wed May 10 13:17:37 2023
+Wed May 10 14:34:49 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Wed May 10 13:17:37 2023           ;
+; Flow Status                     ; Successful - Wed May 10 14:34:49 2023           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; Flappybirds_Top                                 ;
-; Top-level Entity Name           ; VGA_Colour_Switch                               ;
+; Top-level Entity Name           ; bouncyBall                                      ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CEBA4F23C7                                     ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 24 / 18,480 ( < 1 % )                           ;
-; Total registers                 ; 34                                              ;
-; Total pins                      ; 9 / 224 ( 4 % )                                 ;
+; Logic utilization (in ALMs)     ; 49 / 18,480 ( < 1 % )                           ;
+; Total registers                 ; 73                                              ;
+; Total pins                      ; 8 / 224 ( 4 % )                                 ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                           ;
 ; Total DSP Blocks                ; 0 / 66 ( 0 % )                                  ;
@@ -67,35 +67,31 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/10/2023 13:16:42 ;
+; Start date & time ; 05/10/2023 14:34:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Flappybirds_Top     ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                ;
-+-------------------------------------+----------------------------------------+-----------------+-------------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name       ; Section Id ;
-+-------------------------------------+----------------------------------------+-----------------+-------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 251053328745618.168368140219368        ; --              ; --                ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --              ; --                ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --              ; --                ; --         ;
-; MISC_FILE                           ; pll.cmp                                ; --              ; --                ; --         ;
-; MISC_FILE                           ; pll_sim/pll.vho                        ; --              ; --                ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; DE0_CV_Default    ; Top        ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; VGA_Colour_Switch ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; DE0_CV_Default    ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; VGA_Colour_Switch ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; DE0_CV_Default    ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; VGA_Colour_Switch ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --              ; --                ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --              ; --                ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --              ; --                ; --         ;
-; SPD_FILE                            ; pll.spd                                ; --              ; --                ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                     ; --              ; --                ; --         ;
-; TOP_LEVEL_ENTITY                    ; VGA_Colour_Switch                      ; Flappybirds_Top ; --                ; --         ;
-+-------------------------------------+----------------------------------------+-----------------+-------------------+------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                             ;
++-------------------------------------+----------------------------------------+-----------------+----------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name    ; Section Id ;
++-------------------------------------+----------------------------------------+-----------------+----------------+------------+
+; COMPILER_SIGNATURE_ID               ; 251053328745369.168368604702640        ; --              ; --             ; --         ;
+; MISC_FILE                           ; pll.cmp                                ; --              ; --             ; --         ;
+; MISC_FILE                           ; pll_sim/pll.vho                        ; --              ; --             ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; DE0_CV_Default ; Top        ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; bouncyBall     ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; DE0_CV_Default ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; bouncyBall     ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; DE0_CV_Default ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; bouncyBall     ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --              ; --             ; --         ;
+; SPD_FILE                            ; pll.spd                                ; --              ; --             ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                     ; --              ; --             ; --         ;
+; TOP_LEVEL_ENTITY                    ; bouncyBall                             ; Flappybirds_Top ; --             ; --         ;
++-------------------------------------+----------------------------------------+-----------------+----------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -103,11 +99,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4906 MB             ; 00:00:16                           ;
-; Fitter               ; 00:00:15     ; 1.0                     ; 6752 MB             ; 00:00:36                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4817 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 5132 MB             ; 00:00:04                           ;
-; Total                ; 00:00:30     ; --                      ; --                  ; 00:00:59                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4896 MB             ; 00:00:17                           ;
+; Fitter               ; 00:00:19     ; 1.0                     ; 6760 MB             ; 00:00:42                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4813 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.2                     ; 5140 MB             ; 00:00:04                           ;
+; Total                ; 00:00:36     ; --                      ; --                  ; 00:01:06                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -116,10 +112,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; EN399238         ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; EN399238         ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; EN399238         ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; EN399238         ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; EN399236         ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; EN399236         ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; EN399236         ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; EN399236         ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

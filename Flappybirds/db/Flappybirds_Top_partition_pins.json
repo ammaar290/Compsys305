@@ -18,22 +18,6 @@
 				{
 					"name" : "VGA_G[3]",
 					"strict" : false
-				},
-				{
-					"name" : "VGA_R[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sw2",
-					"strict" : false
-				},
-				{
-					"name" : "sw1",
-					"strict" : false
-				},
-				{
-					"name" : "sw0",
-					"strict" : false
 				}
 			]
 		}

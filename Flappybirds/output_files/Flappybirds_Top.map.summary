@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Wed May 10 13:16:51 2023
+Analysis & Synthesis Status : Successful - Wed May 10 14:34:16 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : Flappybirds_Top
-Top-level Entity Name : VGA_Colour_Switch
+Top-level Entity Name : bouncyBall
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 29
-Total pins : 9
+Total registers : 57
+Total pins : 8
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

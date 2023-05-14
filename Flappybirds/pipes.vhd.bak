@@ -1,0 +1,52 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE IEEE.NUMERIC_STD.all;
+
+ENTITY pipes IS
+    PORT
+        ( pb1, pb2, clk, horiz_sync   : IN std_logic;
+          pixel_row, pixel_column  : IN std_logic_vector(9 DOWNTO 0);
+          red, green, blue         : OUT std_logic);      
+END pipes;
+
+architecture behavior of pipes is
+
+SIGNAL pipe_on                     : std_logic;
+SIGNAL pipe_width, pipe_height     : unsigned(9 DOWNTO 0);  
+SIGNAL pipe_y_pos                  : unsigned(9 DOWNTO 0);
+SiGNAL pipe_x_pos                  : unsigned(10 DOWNTO 0);
+SIGNAL pipe_x_motion               : unsigned(9 DOWNTO 0);
+
+BEGIN           
+
+pipe_width <= to_unsigned(8,10);
+pipe_height <= to_unsigned(100,10); -- Set to a suitable height
+
+-- pipe_x_pos and pipe_y_pos show the (x,y) for the top left of pipe
+pipe_x_pos <= to_unsigned(590,11);
+
+pipe_on <= '1' when ( (pipe_x_pos <= unsigned('0' & pixel_column) + pipe_width) and (unsigned('0' & pixel_column) <= pipe_x_pos + pipe_width)  -- x_pos - width <= pixel_column <= x_pos + width
+                    and (pipe_y_pos <= unsigned(pixel_row) + pipe_height) and (unsigned(pixel_row) <= pipe_y_pos + pipe_height) )  else   -- y_pos - height <= pixel_row <= y_pos + height
+            '0';
+
+-- Colours for pixel data on video signal
+-- Changing the background and pipe colour by pushbuttons
+Red <=  pb1;
+Green <= (not pb2) and (not pipe_on);
+Blue <=  not pipe_on;
+
+Move_Pipe: process (horiz_sync)    
+begin
+    -- Move pipe once every horizontal sync
+    if (rising_edge(horiz_sync)) then         
+        -- Reset pipe position when it leaves the screen
+        if ( (pipe_x_pos + pipe_width <= to_unsigned(0, pipe_x_pos'length)) ) then
+            pipe_x_pos <= to_unsigned(590,11);
+            -- randomize pipe_y_pos here, use an LFSR or similar
+        end if;
+        -- Compute next pipe X position
+        pipe_x_pos <= pipe_x_pos - to_unsigned(2,10);
+    end if;
+end process Move_Pipe;
+
+END behavior;

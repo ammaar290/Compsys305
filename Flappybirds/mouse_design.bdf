@@ -23,7 +23,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 216 184 384 200)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clk" (rect 5 0 20 17)(font "Intel Clear" ))
+	(text "clk" (rect 5 0 19 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -34,6 +34,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 160 200 216 224))
 )
 (pin
 	(output)
@@ -50,6 +51,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 968 328 1032 352))
 )
 (pin
 	(output)
@@ -66,6 +68,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1048 368 1112 392))
 )
 (pin
 	(output)
@@ -82,6 +85,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 936 384 1000 408))
 )
 (pin
 	(output)
@@ -98,6 +102,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 936 400 1000 424))
 )
 (pin
 	(output)
@@ -114,6 +119,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 936 416 1000 440))
 )
 (pin
 	(output)
@@ -130,6 +136,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 936 432 1000 456))
 )
 (pin
 	(output)
@@ -146,6 +153,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 936 448 1008 472))
 )
 (pin
 	(output)
@@ -162,6 +170,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 944 480 1016 504))
 )
 (pin
 	(output)
@@ -178,6 +187,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 944 504 1016 528))
 )
 (pin
 	(output)
@@ -194,6 +204,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 944 520 1016 544))
 )
 (pin
 	(output)
@@ -210,6 +221,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 944 536 1016 560))
 )
 (pin
 	(output)
@@ -226,6 +238,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 944 552 1016 576))
 )
 (pin
 	(output)
@@ -242,6 +255,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 944 576 1016 600))
 )
 (pin
 	(output)
@@ -258,6 +272,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 944 592 1008 616))
 )
 (pin
 	(output)
@@ -274,6 +289,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1256 232 1320 256))
 )
 (pin
 	(output)
@@ -290,6 +306,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 1120 280 1184 304))
 )
 (pin
 	(bidir)
@@ -307,6 +324,7 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 1176 160 1232 184))
 )
 (pin
 	(bidir)
@@ -324,6 +342,7 @@ refer to the applicable agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 1160 208 1216 232))
 )
 (symbol
 	(rect 384 120 544 264)
@@ -493,15 +512,39 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 224 64))
 	)
 )
-(connector
-	(pt 608 376)
-	(pt 680 376)
-	(bus)
+(symbol
+	(rect 640 264 672 296)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 21 25 38)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
 )
-(connector
-	(pt 608 488)
-	(pt 680 488)
-	(bus)
+(symbol
+	(rect 296 272 328 304)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst2" (rect 3 21 25 38)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
 )
 (connector
 	(pt 544 232)
@@ -514,14 +557,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 312 232)
 	(pt 312 272)
-)
-(connector
-	(pt 760 376)
-	(pt 768 376)
-)
-(connector
-	(pt 768 424)
-	(pt 760 424)
 )
 (connector
 	(pt 768 544)
@@ -562,50 +597,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 728 336)
-	(pt 728 344)
-)
-(connector
-	(text "HEX[0]" (rect 738 328 771 345)(font "Intel Clear" ))
-	(pt 728 344)
-	(pt 760 344)
-)
-(connector
-	(text "HEX[1]" (rect 738 344 771 361)(font "Intel Clear" ))
-	(pt 728 360)
-	(pt 760 360)
-)
-(connector
-	(text "HEX[2]" (rect 738 360 771 377)(font "Intel Clear" ))
-	(pt 728 376)
-	(pt 760 376)
-)
-(connector
-	(text "HEX[3]" (rect 738 376 771 393)(font "Intel Clear" ))
-	(pt 760 392)
-	(pt 728 392)
-)
-(connector
-	(text "HEX[4]" (rect 738 392 771 409)(font "Intel Clear" ))
-	(pt 760 408)
-	(pt 728 408)
-)
-(connector
-	(text "HEX[5]" (rect 738 408 771 425)(font "Intel Clear" ))
-	(pt 760 424)
-	(pt 728 424)
-)
-(connector
-	(text "HEX[6]" (rect 738 424 771 441)(font "Intel Clear" ))
-	(pt 760 440)
-	(pt 728 440)
-)
-(connector
-	(text "HEX1[0]" (rect 738 456 776 473)(font "Intel Clear" ))
-	(pt 768 472)
-	(pt 728 472)
-)
-(connector
 	(text "HEX1[5]" (rect 730 552 768 569)(font "Intel Clear" ))
 	(pt 768 568)
 	(pt 720 568)
@@ -638,6 +629,82 @@ refer to the applicable agreement for further details.
 	(text "HEX1[6]" (rect 722 568 760 585)(font "Intel Clear" ))
 	(pt 712 584)
 	(pt 768 584)
+)
+(connector
+	(pt 752 344)
+	(pt 752 336)
+)
+(connector
+	(pt 760 344)
+	(pt 752 344)
+)
+(connector
+	(pt 760 376)
+	(pt 768 376)
+)
+(connector
+	(text "HEX1[0]" (rect 706 456 744 473)(font "Intel Clear" ))
+	(pt 696 472)
+	(pt 768 472)
+)
+(connector
+	(text "HEX0[0]" (rect 706 320 744 337)(font "Intel Clear" ))
+	(pt 752 336)
+	(pt 728 336)
+)
+(connector
+	(text "HEX0[1]" (rect 714 344 752 361)(font "Intel Clear" ))
+	(pt 760 360)
+	(pt 704 360)
+)
+(connector
+	(text "HEX0[2]" (rect 730 360 768 377)(font "Intel Clear" ))
+	(pt 720 376)
+	(pt 760 376)
+)
+(connector
+	(text "HEX0[3]" (rect 706 376 744 393)(font "Intel Clear" ))
+	(pt 696 392)
+	(pt 760 392)
+)
+(connector
+	(text "HEX0[4]" (rect 698 400 736 417)(font "Intel Clear" ))
+	(pt 760 408)
+	(pt 728 408)
+)
+(connector
+	(text "HEX0[6]" (rect 690 440 728 457)(font "Intel Clear" ))
+	(pt 760 440)
+	(pt 728 440)
+)
+(connector
+	(text "HEX0[5]" (rect 706 408 744 425)(font "Intel Clear" ))
+	(pt 696 424)
+	(pt 760 424)
+)
+(connector
+	(pt 760 424)
+	(pt 768 424)
+)
+(connector
+	(pt 680 208)
+	(pt 656 208)
+)
+(connector
+	(pt 656 208)
+	(pt 656 264)
+)
+(connector
+	(text "HEX0[6..0]" (rect 618 360 667 377)(font "Intel Clear" ))
+	(pt 608 376)
+	(pt 680 376)
+	(bus)
+)
+(connector
+	(text "HEX1[6..0]" (rect 618 472 667 489)(font "Intel Clear" ))
+	(pt 608 488)
+	(pt 680 488)
+	(bus)
 )
 (junction (pt 760 376))
 (junction (pt 760 424))

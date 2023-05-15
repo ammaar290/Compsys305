@@ -1,13 +1,13 @@
-Fitter Status : Successful - Mon May 15 00:06:13 2023
-Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Fitter Status : Successful - Mon May 15 13:30:21 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : Flappybirds_Top
-Top-level Entity Name : pipes_design
+Top-level Entity Name : mouse_design
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 48 / 18,480 ( < 1 % )
-Total registers : 68
-Total pins : 8 / 224 ( 4 % )
+Logic utilization (in ALMs) : 66 / 18,480 ( < 1 % )
+Total registers : 122
+Total pins : 19 / 224 ( 8 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 3,153,920 ( 0 % )
 Total RAM Blocks : 0 / 308 ( 0 % )

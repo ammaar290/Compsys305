@@ -22,18 +22,6 @@ BEGIN
 
 pipe_width <= CONV_STD_LOGIC_VECTOR(4,10);
 
-Move_Pipe: process (clk)
-begin
-	if rising_edge(clk) then
-		-- Move pipe from right to left
-		if pipe_x_pos <= '0' & pipe_width then
-			pipe_x_pos <= CONV_STD_LOGIC_VECTOR(639, 11);
-		else
-			pipe_x_pos <= pipe_x_pos - CONV_STD_LOGIC_VECTOR(1, 11);
-		end if;
-	end if;
-end process Move_Pipe;
-
 pipe_on <= '1' when ('0' & pixel_column >= '0' & pipe_x_pos) and ('0' & pixel_column <= '0' & pipe_x_pos + pipe_width)	-- pipe_x_pos <= pixel_column <= pipe_x_pos + pipe_width
            and ('0' & pixel_row >= pipe_y_pos) and ('0' & pixel_row <= pipe_y_pos + pipe_width)  -- pipe_y_pos <= pixel_row <= pipe_y_pos + pipe_width
            else '0';
@@ -43,5 +31,19 @@ pipe_on <= '1' when ('0' & pixel_column >= '0' & pipe_x_pos) and ('0' & pixel_co
 red <= pb1;
 green <= not pb2 and not pipe_on;
 blue <= not pipe_on;
+
+Move_Pipe: process (horiz_sync)
+begin
+	if rising_edge(horiz_sync) then
+		-- Move pipe from right to left
+		if pipe_x_pos <= '0' & pipe_width then
+			pipe_x_pos <= CONV_STD_LOGIC_VECTOR(639, 11);
+		else
+			pipe_x_pos <= pipe_x_pos - CONV_STD_LOGIC_VECTOR(1, 11);
+		end if;
+	end if;
+end process Move_Pipe;
+
+
 
 END behavior;

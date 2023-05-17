@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Flappybirds_Top
-Wed May 10 14:34:49 2023
+Mon May 15 13:30:40 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -34,9 +34,9 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                       ;
 +---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Wed May 10 14:34:49 2023 ;
+; EDA Netlist Writer Status ; No Output Files Generated - Mon May 15 13:30:40 2023 ;
 ; Revision Name             ; Flappybirds_Top                                      ;
-; Top-level Entity Name     ; bouncyBall                                           ;
+; Top-level Entity Name     ; mouse_design                                         ;
 ; Family                    ; Cyclone V                                            ;
 +---------------------------+------------------------------------------------------+
 
@@ -47,7 +47,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Wed May 10 14:34:48 2023
+    Info: Processing started: Mon May 15 13:30:39 2023
 Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off Flappybirds -c Flappybirds_Top
 Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV_Default -section_id Top was ignored
@@ -77,8 +77,8 @@ Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity do
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 4710 megabytes
-    Info: Processing ended: Wed May 10 14:34:49 2023
+    Info: Peak virtual memory: 4707 megabytes
+    Info: Processing ended: Mon May 15 13:30:40 2023
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

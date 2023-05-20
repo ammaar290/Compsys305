@@ -440,12 +440,7 @@ refer to the applicable agreement for further details.
 	(pt 472 416)
 )
 (connector
-	(pt 456 416)
-	(pt 472 416)
-)
-(connector
 	(pt 472 416)
 	(pt 504 416)
 )
 (junction (pt 784 360))
-(junction (pt 472 416))

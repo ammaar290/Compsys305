@@ -22,8 +22,9 @@ BEGIN
 sizex <= CONV_STD_LOGIC_VECTOR(20,10);  
 sizey <= CONV_STD_LOGIC_VECTOR(200,10);
 
-ball_x_pos <= CONV_STD_LOGIC_VECTOR(590,10);
-ball_y_pos <= CONV_STD_LOGIC_VECTOR(350,10);
+-- Remove these lines
+-- ball_x_pos <= CONV_STD_LOGIC_VECTOR(590,10);
+-- ball_y_pos <= CONV_STD_LOGIC_VECTOR(350,10);
 
 process(clk)
 begin
@@ -43,5 +44,13 @@ ball_on <= '1' when ( ('0' & ball_x_pos <= pixel_column + sizex) and ('0' & pixe
 Red <=  not ball_on;
 Green <= ball_on;
 Blue <=  not ball_on;
+
+-- add initialization for ball_y_pos and ball_x_pos within an initial process.
+process
+begin
+    ball_x_pos <= CONV_STD_LOGIC_VECTOR(590,10);
+    ball_y_pos <= CONV_STD_LOGIC_VECTOR(350,10);
+    wait for 2ns;
+end process;
 
 END behavior;

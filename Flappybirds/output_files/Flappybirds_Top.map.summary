@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon May 15 13:30:03 2023
+Analysis & Synthesis Status : Successful - Thu May 18 14:05:51 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : Flappybirds_Top
-Top-level Entity Name : mouse_design
+Top-level Entity Name : BouncyBirdTest
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 120
-Total pins : 19
+Total registers : 24
+Total pins : 8
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

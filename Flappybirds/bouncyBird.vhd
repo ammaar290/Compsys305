@@ -49,9 +49,9 @@ begin
 		-- If does work, change RGB to just ball_on
 		
 		if(pb1 = '1') then
-			ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
-		else
 			ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+		else
+			ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);
 		end if;
 		
 		ball_y_pos <= ball_y_pos + ball_y_motion;

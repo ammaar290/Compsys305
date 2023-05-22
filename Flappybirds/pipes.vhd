@@ -39,7 +39,7 @@ begin
             if ball_x_pos = "0000000000" then  -- If the pipe has moved to the left edge of the screen...
                 ball_x_pos <= CONV_STD_LOGIC_VECTOR(590,10);  -- Reset the pipe's x-coordinate to its starting position
             else
-                ball_x_pos <= ball_x_pos - 1;  -- Move the pipe one pixel to the left
+                ball_x_pos <= std_logic_vector(to_unsigned(to_integer(unsigned(ball_x_pos)) - 1, ball_x_pos'length));  -- Move the pipe one pixel to the left
             end if;
         end if;
     end if;

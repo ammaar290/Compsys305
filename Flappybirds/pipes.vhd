@@ -1,49 +1,58 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.all;
 USE IEEE.STD_LOGIC_ARITH.all;
-USE IEEE.STD_LOGIC_SIGNED.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
 
 ENTITY pipes IS
 	PORT
-		( pb1, pb2, clk, vert_sync, horiz_sync	: IN std_logic;
-          pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
-		  red, green, blue 			: OUT std_logic);
+		( clk 						: IN std_logic;
+		  pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
+		  red, green, blue 			: OUT std_logic);		
 END pipes;
 
 architecture behavior of pipes is
 
-SIGNAL pipe_on					: std_logic;
-SIGNAL pipe_width				: std_logic_vector(9 DOWNTO 0);
-SIGNAL pipe_x_pos				: std_logic_vector(10 DOWNTO 0);
-SIGNAL pipe_y_pos				: std_logic_vector(9 DOWNTO 0) := (OTHERS => '0');
-SIGNAL pipe_x_motion			: std_logic_vector(10 DOWNTO 0);
+SIGNAL ball_on  : std_logic;
+SIGNAL sizex    : std_logic_vector(9 DOWNTO 0);  
+SIGNAL sizey    : std_logic_vector(9 DOWNTO 0); 
+SIGNAL ball_y_pos, ball_x_pos : std_logic_vector(9 DOWNTO 0);
+SIGNAL counter : integer range 0 to 10000 := 0; -- Add a counter
 
-BEGIN
+BEGIN           
 
-pipe_width <= CONV_STD_LOGIC_VECTOR(4,10);
+sizex <= CONV_STD_LOGIC_VECTOR(20,10);  -- changing to a rectangular pipe spanning vertically
+sizey <= CONV_STD_LOGIC_VECTOR(200,10);
 
-pipe_on <= '1' when ('0' & pixel_column >= '0' & pipe_x_pos) and ('0' & pixel_column <= '0' & pipe_x_pos + pipe_width)	-- pipe_x_pos <= pixel_column <= pipe_x_pos + pipe_width
-           and ('0' & pixel_row >= pipe_y_pos) and ('0' & pixel_row <= pipe_y_pos + pipe_width)  -- pipe_y_pos <= pixel_row <= pipe_y_pos + pipe_width
-           else '0';
+ball_x_pos <= CONV_STD_LOGIC_VECTOR(590,10);
+ball_y_pos <= CONV_STD_LOGIC_VECTOR(350,10);
 
--- Colors for pixel data on video signal
--- Changing the background and pipe color by pushbuttons
-red <= pb1;
-green <= not pb2 and not pipe_on;
-blue <= not pipe_on;
-
-Move_Pipe: process (horiz_sync)
+process (clk)  -- New process to update ball_x_pos
 begin
-	if rising_edge(horiz_sync) then
-		-- Move pipe from right to left
-		if pipe_x_pos <= '0' & pipe_width then
-			pipe_x_pos <= CONV_STD_LOGIC_VECTOR(639, 11);
-		else
-			pipe_x_pos <= pipe_x_pos - CONV_STD_LOGIC_VECTOR(1, 11);
-		end if;
-	end if;
-end process Move_Pipe;
+    if rising_edge(clk) then
+        counter <= counter + 1;  -- Increment the counter
+
+        if counter >= 10000 then  -- If the counter reaches 10000...
+            counter <= 0;  -- Reset the counter
+
+            if ball_x_pos = "0000000000" then  -- If the pipe has moved to the left edge of the screen...
+                ball_x_pos <= CONV_STD_LOGIC_VECTOR(590,10);  -- Reset the pipe's x-coordinate to its starting position
+            else
+                ball_x_pos <= ball_x_pos - 1;  -- Move the pipe one pixel to the left
+            end if;
+        end if;
+    end if;
+end process;
+
+ball_on <= '1' when ( ('0' & ball_x_pos <= pixel_column + sizex) and ('0' & pixel_column <= ball_x_pos + sizex) 	-- x_pos - size <= pixel_column <= x_pos + size
+                    and ('0' & ball_y_pos <= pixel_row + sizey) and ('0' & pixel_row <= ball_y_pos + sizey) )  else	-- y_pos - size <= pixel_row <= y_pos + size
+            '0';
 
 
+-- Colours for pixel data on video signal
+-- Keeping background white and square in red
+Red <=  not ball_on;
+-- Turn off Green and Blue when displaying square
+Green <= '1';
+Blue <=  not ball_on;
 
 END behavior;

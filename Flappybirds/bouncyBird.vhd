@@ -49,6 +49,8 @@ begin
 		-- If pb1 is pressed, return ball_y_motion a process 
 		
 		if(pb1 = '1') then
+			ball_y_motion <= CONV_STD_LOGIC_VECTOR(7,10);
+			ball_y_motion <= CONV_STD_LOGIC_VECTOR(4,10);
 			ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
 		else
 			ball_y_motion <= - CONV_STD_LOGIC_VECTOR(2,10);

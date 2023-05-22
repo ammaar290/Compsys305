@@ -1,5 +1,5 @@
 Flow report for Flappybirds_Top
-Mon May 22 20:43:36 2023
+Mon May 22 21:01:57 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Mon May 22 20:43:36 2023      ;
+; Flow Status                 ; Flow Failed - Mon May 22 21:01:57 2023      ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; Flappybirds_Top                             ;
 ; Top-level Entity Name       ; pipes22May                                  ;
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/22/2023 20:43:25 ;
+; Start date & time ; 05/22/2023 21:01:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Flappybirds_Top     ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+-----------------+----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name    ; Section Id ;
 +-------------------------------------+----------------------------------------+-----------------+----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 277807425194153.168474500510792        ; --              ; --             ; --         ;
+; COMPILER_SIGNATURE_ID               ; 277807425194153.168474610503812        ; --              ; --             ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --              ; --             ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --              ; --             ; --         ;
 ; MISC_FILE                           ; pll.cmp                                ; --              ; --             ; --         ;

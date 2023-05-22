@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Flappybirds_Top
-Mon May 22 20:43:36 2023
+Mon May 22 21:01:57 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon May 22 20:43:36 2023           ;
+; Analysis & Synthesis Status ; Failed - Mon May 22 21:01:57 2023           ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; Flappybirds_Top                             ;
 ; Top-level Entity Name       ; pipes22May                                  ;
@@ -170,7 +170,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 22 20:43:24 2023
+    Info: Processing started: Mon May 22 21:01:45 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Flappybirds -c Flappybirds_Top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -314,7 +314,7 @@ Error (10028): Can't resolve multiple constant drivers for net "ball_x_pos[0]" a
 Error (12152): Can't elaborate user hierarchy "pipes:inst3"
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 12 errors, 3 warnings
     Error: Peak virtual memory: 4839 megabytes
-    Error: Processing ended: Mon May 22 20:43:36 2023
+    Error: Processing ended: Mon May 22 21:01:57 2023
     Error: Elapsed time: 00:00:12
     Error: Total CPU time (on all processors): 00:00:26
 

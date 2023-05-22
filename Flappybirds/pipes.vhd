@@ -9,7 +9,6 @@ ENTITY pipes IS
 		  pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
 		  red, green, blue 			: OUT std_logic);		
 END pipes;
-
 architecture behavior of pipes is
 
 SIGNAL ball_on  : std_logic;

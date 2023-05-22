@@ -46,7 +46,7 @@ begin
 
 		-- Placed bouncy ball logic straight into push button.
 		-- Should show bouncy ball, if not look at logic for bouncyball and return result and see accordingly
-		-- If does work, change RGB to just ball_on
+		-- If pb1 is pressed, return ball_y_motion a process 
 		
 		if(pb1 = '1') then
 			ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);

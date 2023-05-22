@@ -1,5 +1,5 @@
 Assembler report for Flappybirds_Top
-Mon May 15 13:30:25 2023
+Thu May 18 14:06:09 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/amar290/OneDrive - The University of Auckland/Documents/GitHub/Compsys305/Flappybirds/output_files/Flappybirds_Top.sof
+  5. Assembler Device Options: C:/Users/ksha810/Downloads/Compsys305-main/Compsys305-main/Flappybirds/output_files/Flappybirds_Top.sof
   6. Assembler Messages
 
 
@@ -37,9 +37,9 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon May 15 13:30:25 2023 ;
+; Assembler Status      ; Successful - Thu May 18 14:06:09 2023 ;
 ; Revision Name         ; Flappybirds_Top                       ;
-; Top-level Entity Name ; mouse_design                          ;
+; Top-level Entity Name ; BouncyBirdTest                        ;
 ; Family                ; Cyclone V                             ;
 ; Device                ; 5CEBA4F23C7                           ;
 +-----------------------+---------------------------------------+
@@ -52,23 +52,23 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                       ;
-+---------------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                       ;
-+---------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/amar290/OneDrive - The University of Auckland/Documents/GitHub/Compsys305/Flappybirds/output_files/Flappybirds_Top.sof ;
-+---------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                               ;
++---------------------------------------------------------------------------------------------------------+
+; File Name                                                                                               ;
++---------------------------------------------------------------------------------------------------------+
+; C:/Users/ksha810/Downloads/Compsys305-main/Compsys305-main/Flappybirds/output_files/Flappybirds_Top.sof ;
++---------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/amar290/OneDrive - The University of Auckland/Documents/GitHub/Compsys305/Flappybirds/output_files/Flappybirds_Top.sof ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                                  ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x0050B5D7                                                                                                                               ;
-; Checksum       ; 0x0050B5D7                                                                                                                               ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/ksha810/Downloads/Compsys305-main/Compsys305-main/Flappybirds/output_files/Flappybirds_Top.sof ;
++----------------+------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                          ;
++----------------+------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x004E3818                                                                                                       ;
+; Checksum       ; 0x004E3818                                                                                                       ;
++----------------+------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -77,13 +77,13 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Mon May 15 13:30:22 2023
+    Info: Processing started: Thu May 18 14:06:06 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Flappybirds -c Flappybirds_Top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4818 megabytes
-    Info: Processing ended: Mon May 15 13:30:25 2023
+    Info: Peak virtual memory: 4812 megabytes
+    Info: Processing ended: Thu May 18 14:06:09 2023
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

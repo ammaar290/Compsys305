@@ -1,6 +1,6 @@
 Fitter report for Flappybirds_Top
-Thu May 18 14:06:05 2023
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Tue May 23 15:14:05 2023
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -61,30 +61,30 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Fitter Summary                                                                    ;
-+---------------------------------+-------------------------------------------------+
-; Fitter Status                   ; Successful - Thu May 18 14:06:05 2023           ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
-; Revision Name                   ; Flappybirds_Top                                 ;
-; Top-level Entity Name           ; BouncyBirdTest                                  ;
-; Family                          ; Cyclone V                                       ;
-; Device                          ; 5CEBA4F23C7                                     ;
-; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 20 / 18,480 ( < 1 % )                           ;
-; Total registers                 ; 26                                              ;
-; Total pins                      ; 8 / 224 ( 4 % )                                 ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                           ;
-; Total RAM Blocks                ; 0 / 308 ( 0 % )                                 ;
-; Total DSP Blocks                ; 0 / 66 ( 0 % )                                  ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 1 / 4 ( 25 % )                                  ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Fitter Summary                                                                ;
++---------------------------------+---------------------------------------------+
+; Fitter Status                   ; Successful - Tue May 23 15:14:05 2023       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; Flappybirds_Top                             ;
+; Top-level Entity Name           ; pipes22May                                  ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CEBA4F23C7                                 ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 66 / 18,480 ( < 1 % )                       ;
+; Total registers                 ; 82                                          ;
+; Total pins                      ; 6 / 224 ( 3 % )                             ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
+; Total RAM Blocks                ; 0 / 308 ( 0 % )                             ;
+; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1 / 4 ( 25 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,28 +152,32 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
-; Maximum used               ; 8           ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
-;     Processor 3            ;   0.2%      ;
-;     Processors 4-8         ;   0.1%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processor 3            ;   0.6%      ;
+;     Processor 4            ;   0.6%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                                                          ;
-+----------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------+------------------+-----------------------+
-; Node                                                                       ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                   ; Destination Port ; Destination Port Name ;
-+----------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------+------------------+-----------------------+
-; pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0]~CLKENA0 ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                    ;                  ;                       ;
-; VGA_SYNC:inst|h_count[6]                                                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; VGA_SYNC:inst|h_count[6]~DUPLICATE ;                  ;                       ;
-; VGA_SYNC:inst|h_count[7]                                                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; VGA_SYNC:inst|h_count[7]~DUPLICATE ;                  ;                       ;
-+----------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------+------------------+-----------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                                                               ;
++----------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------+------------------+-----------------------+
+; Node                                                                       ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                        ; Destination Port ; Destination Port Name ;
++----------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------+------------------+-----------------------+
+; pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0]~CLKENA0 ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                         ;                  ;                       ;
+; VGA_SYNC:inst|h_count[2]                                                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; VGA_SYNC:inst|h_count[2]~DUPLICATE      ;                  ;                       ;
+; VGA_SYNC:inst|h_count[4]                                                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; VGA_SYNC:inst|h_count[4]~DUPLICATE      ;                  ;                       ;
+; VGA_SYNC:inst|pixel_column[5]                                              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; VGA_SYNC:inst|pixel_column[5]~DUPLICATE ;                  ;                       ;
+; VGA_SYNC:inst|v_count[3]                                                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; VGA_SYNC:inst|v_count[3]~DUPLICATE      ;                  ;                       ;
+; VGA_SYNC:inst|v_count[7]                                                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; VGA_SYNC:inst|v_count[7]~DUPLICATE      ;                  ;                       ;
+; pipes:inst3|ball_x_pos[8]                                                  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; pipes:inst3|ball_x_pos[8]~DUPLICATE     ;                  ;                       ;
++----------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------+------------------+-----------------------+
 
 
 +-------------------------------------------------------------------------------------------+
@@ -337,6 +341,8 @@ refer to the applicable agreement for further details.
 ; Location ;                ;              ; HEX5[4]       ; PIN_C1        ; QSF Assignment ;
 ; Location ;                ;              ; HEX5[5]       ; PIN_C2        ; QSF Assignment ;
 ; Location ;                ;              ; HEX5[6]       ; PIN_W19       ; QSF Assignment ;
+; Location ;                ;              ; KEY[0]        ; PIN_U7        ; QSF Assignment ;
+; Location ;                ;              ; KEY[1]        ; PIN_W9        ; QSF Assignment ;
 ; Location ;                ;              ; KEY[2]        ; PIN_M7        ; QSF Assignment ;
 ; Location ;                ;              ; KEY[3]        ; PIN_M6        ; QSF Assignment ;
 ; Location ;                ;              ; LEDR[0]       ; PIN_AA2       ; QSF Assignment ;
@@ -382,19 +388,19 @@ refer to the applicable agreement for further details.
 +----------+----------------+--------------+---------------+---------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Incremental Compilation Preservation Summary                                                    ;
-+---------------------+-------------------+----------------------------+--------------------------+
-; Type                ; Total [A + B]     ; From Design Partitions [A] ; From Rapid Recompile [B] ;
-+---------------------+-------------------+----------------------------+--------------------------+
-; Placement (by node) ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 80 ) ; 0.00 % ( 0 / 80 )          ; 0.00 % ( 0 / 80 )        ;
-;     -- Achieved     ; 0.00 % ( 0 / 80 ) ; 0.00 % ( 0 / 80 )          ; 0.00 % ( 0 / 80 )        ;
-;                     ;                   ;                            ;                          ;
-; Routing (by net)    ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
-;     -- Achieved     ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
-+---------------------+-------------------+----------------------------+--------------------------+
++--------------------------------------------------------------------------------------------------+
+; Incremental Compilation Preservation Summary                                                     ;
++---------------------+--------------------+----------------------------+--------------------------+
+; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
++---------------------+--------------------+----------------------------+--------------------------+
+; Placement (by node) ;                    ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 210 ) ; 0.00 % ( 0 / 210 )         ; 0.00 % ( 0 / 210 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 210 ) ; 0.00 % ( 0 / 210 )         ; 0.00 % ( 0 / 210 )       ;
+;                     ;                    ;                            ;                          ;
+; Routing (by net)    ;                    ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
+;     -- Achieved     ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
++---------------------+--------------------+----------------------------+--------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -412,7 +418,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 73 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 203 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 7 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -420,7 +426,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Compsys305-main/Flappybirds/output_files/Flappybirds_Top.pin.
+The pin-out file can be found in C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/output_files/Flappybirds_Top.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -428,14 +434,14 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 20 / 18,480        ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 20                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 20 / 18,480        ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 11                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 8                  ;       ;
-;         [c] ALMs used for registers                         ; 1                  ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 66 / 18,480        ; < 1 % ;
+; ALMs needed [=A-B+C]                                        ; 66                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 70 / 18,480        ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 33                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 31                 ;       ;
+;         [c] ALMs used for registers                         ; 6                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 18,480         ; 0 %   ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 4 / 18,480         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18,480         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -444,28 +450,28 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 3 / 1,848          ; < 1 % ;
-;     -- Logic LABs                                           ; 3                  ;       ;
+; Total LABs:  partially or completely used                   ; 10 / 1,848         ; < 1 % ;
+;     -- Logic LABs                                           ; 10                 ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 35                 ;       ;
+; Combinational ALUT usage for logic                          ; 117                ;       ;
 ;     -- 7 input functions                                    ; 1                  ;       ;
-;     -- 6 input functions                                    ; 3                  ;       ;
-;     -- 5 input functions                                    ; 4                  ;       ;
-;     -- 4 input functions                                    ; 1                  ;       ;
-;     -- <=3 input functions                                  ; 26                 ;       ;
-; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
+;     -- 6 input functions                                    ; 9                  ;       ;
+;     -- 5 input functions                                    ; 15                 ;       ;
+;     -- 4 input functions                                    ; 12                 ;       ;
+;     -- <=3 input functions                                  ; 80                 ;       ;
+; Combinational ALUT usage for route-throughs                 ; 2                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 26                 ;       ;
+; Dedicated logic registers                                   ; 82                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 24 / 36,960        ; < 1 % ;
-;         -- Secondary logic registers                        ; 2 / 36,960         ; < 1 % ;
+;         -- Primary logic registers                          ; 76 / 36,960        ; < 1 % ;
+;         -- Secondary logic registers                        ; 6 / 36,960         ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
-;         -- Design implementation registers                  ; 24                 ;       ;
-;         -- Routing optimization registers                   ; 2                  ;       ;
+;         -- Design implementation registers                  ; 76                 ;       ;
+;         -- Routing optimization registers                   ; 6                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
-; I/O pins                                                    ; 8 / 224            ; 4 %   ;
+; I/O pins                                                    ; 6 / 224            ; 3 %   ;
 ;     -- Clock pins                                           ; 1 / 9              ; 11 %  ;
 ;     -- Dedicated input pins                                 ; 0 / 11             ; 0 %   ;
 ;                                                             ;                    ;       ;
@@ -489,11 +495,11 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 ; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 3              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.2% / 0.1% / 0.2% ;       ;
-; Maximum fan-out                                             ; 26                 ;       ;
-; Highest non-global fan-out                                  ; 12                 ;       ;
-; Total fan-out                                               ; 202                ;       ;
-; Average fan-out                                             ; 2.46               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.6% / 0.7% / 0.4% ;       ;
+; Maximum fan-out                                             ; 82                 ;       ;
+; Highest non-global fan-out                                  ; 30                 ;       ;
+; Total fan-out                                               ; 612                ;       ;
+; Average fan-out                                             ; 2.81               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -502,14 +508,14 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Statistic                                                   ; Top                  ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 20 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 20                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 20 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 11                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 8                    ; 0                              ;
-;         [c] ALMs used for registers                         ; 1                    ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 66 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 66                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 70 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 33                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 31                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 6                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 0 / 18480 ( 0 % )    ; 0 / 18480 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 4 / 18480 ( < 1 % )  ; 0 / 18480 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18480 ( 0 % )    ; 0 / 18480 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -518,32 +524,32 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 ;                                                             ;                      ;                                ;
 ; Difficulty packing design                                   ; Low                  ; Low                            ;
 ;                                                             ;                      ;                                ;
-; Total LABs:  partially or completely used                   ; 3 / 1848 ( < 1 % )   ; 0 / 1848 ( 0 % )               ;
-;     -- Logic LABs                                           ; 3                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 10 / 1848 ( < 1 % )  ; 0 / 1848 ( 0 % )               ;
+;     -- Logic LABs                                           ; 10                   ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
-; Combinational ALUT usage for logic                          ; 35                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 117                  ; 0                              ;
 ;     -- 7 input functions                                    ; 1                    ; 0                              ;
-;     -- 6 input functions                                    ; 3                    ; 0                              ;
-;     -- 5 input functions                                    ; 4                    ; 0                              ;
-;     -- 4 input functions                                    ; 1                    ; 0                              ;
-;     -- <=3 input functions                                  ; 26                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 0                    ; 0                              ;
+;     -- 6 input functions                                    ; 9                    ; 0                              ;
+;     -- 5 input functions                                    ; 15                   ; 0                              ;
+;     -- 4 input functions                                    ; 12                   ; 0                              ;
+;     -- <=3 input functions                                  ; 80                   ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 2                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
 ;     -- 32-address deep                                      ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Dedicated logic registers                                   ; 0                    ; 0                              ;
 ;     -- By type:                                             ;                      ;                                ;
-;         -- Primary logic registers                          ; 24 / 36960 ( < 1 % ) ; 0 / 36960 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 2 / 36960 ( < 1 % )  ; 0 / 36960 ( 0 % )              ;
+;         -- Primary logic registers                          ; 76 / 36960 ( < 1 % ) ; 0 / 36960 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 6 / 36960 ( < 1 % )  ; 0 / 36960 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
-;         -- Design implementation registers                  ; 24                   ; 0                              ;
-;         -- Routing optimization registers                   ; 2                    ; 0                              ;
+;         -- Design implementation registers                  ; 76                   ; 0                              ;
+;         -- Routing optimization registers                   ; 6                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
-; I/O pins                                                    ; 7                    ; 1                              ;
+; I/O pins                                                    ; 5                    ; 1                              ;
 ; I/O registers                                               ; 0                    ; 0                              ;
 ; Total block memory bits                                     ; 0                    ; 0                              ;
 ; Total block memory implementation bits                      ; 0                    ; 0                              ;
@@ -554,21 +560,21 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 ; PLL Reference Clock Select Block                            ; 0 / 4 ( 0 % )        ; 1 / 4 ( 25 % )                 ;
 ;                                                             ;                      ;                                ;
 ; Connections                                                 ;                      ;                                ;
-;     -- Input Connections                                    ; 26                   ; 0                              ;
-;     -- Registered Input Connections                         ; 26                   ; 0                              ;
-;     -- Output Connections                                   ; 0                    ; 26                             ;
+;     -- Input Connections                                    ; 82                   ; 0                              ;
+;     -- Registered Input Connections                         ; 82                   ; 0                              ;
+;     -- Output Connections                                   ; 0                    ; 82                             ;
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 193                  ; 58                             ;
-;     -- Registered Connections                               ; 99                   ; 0                              ;
+;     -- Total Connections                                    ; 603                  ; 114                            ;
+;     -- Registered Connections                               ; 313                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
-;     -- Top                                                  ; 0                    ; 26                             ;
-;     -- hard_block:auto_generated_inst                       ; 26                   ; 0                              ;
+;     -- Top                                                  ; 0                    ; 82                             ;
+;     -- hard_block:auto_generated_inst                       ; 82                   ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Partition Interface                                         ;                      ;                                ;
-;     -- Input Ports                                          ; 3                    ; 1                              ;
+;     -- Input Ports                                          ; 1                    ; 1                              ;
 ;     -- Output Ports                                         ; 5                    ; 1                              ;
 ;     -- Bidir Ports                                          ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
@@ -588,15 +594,13 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 +-------------------------------------------------------------+----------------------+--------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                                                                                            ;
-+--------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
-+--------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; KEY[0] ; U7    ; 3A       ; 10           ; 0            ; 91           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; KEY[1] ; W9    ; 3A       ; 11           ; 0            ; 34           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; clk    ; M9    ; 3B       ; 22           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-+--------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                                                                          ;
++------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
+; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
++------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
+; clk  ; M9    ; 3B       ; 22           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
++------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -618,7 +622,7 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 ; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ; VCCPD Voltage ;
 +----------+-----------------+---------------+--------------+---------------+
 ; 2A       ; 0 / 16 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 3A       ; 2 / 16 ( 13 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 3A       ; 0 / 16 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
 ; 3B       ; 1 / 32 ( 3 % )  ; 2.5V          ; --           ; 2.5V          ;
 ; 4A       ; 0 / 48 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
 ; 5A       ; 0 / 16 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
@@ -1035,7 +1039,7 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 ; U4       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; U5       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; U6       ; 67         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; U7       ; 59         ; 3A       ; KEY[0]                          ; input  ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
+; U7       ; 59         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U8       ; 61         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U9       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; U10      ; 85         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -1081,7 +1085,7 @@ The pin-out file can be found in C:/Users/ksha810/Downloads/Compsys305-main/Comp
 ; W6       ;            ; 3A       ; VCCPD3A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W7       ;            ; --       ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W8       ; 63         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; W9       ; 65         ; 3A       ; KEY[1]                          ; input  ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
+; W9       ; 65         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; W10      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W11      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; W12      ;            ; 3B, 4A   ; VCCPD3B4A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
@@ -1127,8 +1131,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; Pin Name ; Reason                        ;
 +----------+-------------------------------+
 ; VGA_HS   ; Incomplete set of assignments ;
-; KEY[1]   ; Incomplete set of assignments ;
-; KEY[0]   ; Incomplete set of assignments ;
 ; VGA_VS   ; Incomplete set of assignments ;
 ; VGA_B[3] ; Incomplete set of assignments ;
 ; VGA_G[3] ; Incomplete set of assignments ;
@@ -1185,17 +1187,18 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                             ;
-+------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node         ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Entity Name    ; Library Name ;
-+------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------+----------------+--------------+
-; |BouncyBirdTest                    ; 19.5 (0.5)           ; 19.5 (0.5)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 35 (1)              ; 26 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 8    ; 0            ; |BouncyBirdTest                                                     ; BouncyBirdTest ; work         ;
-;    |VGA_SYNC:inst|                 ; 19.0 (19.0)          ; 19.0 (19.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 34 (34)             ; 26 (26)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |BouncyBirdTest|VGA_SYNC:inst                                       ; VGA_SYNC       ; work         ;
-;    |pll:inst1|                     ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |BouncyBirdTest|pll:inst1                                           ; pll            ; pll          ;
-;       |pll_0002:pll_inst|          ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |BouncyBirdTest|pll:inst1|pll_0002:pll_inst                         ; pll_0002       ; pll          ;
-;          |altera_pll:altera_pll_i| ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |BouncyBirdTest|pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i ; altera_pll     ; work         ;
-+------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------+----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                      ;
++------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node         ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name ; Library Name ;
++------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------------+-------------+--------------+
+; |pipes22May                        ; 66.0 (0.5)           ; 69.0 (0.5)                       ; 3.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 117 (1)             ; 82 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 6    ; 0            ; |pipes22May                                                     ; pipes22May  ; work         ;
+;    |VGA_SYNC:inst|                 ; 25.8 (25.8)          ; 27.6 (27.6)                      ; 1.9 (1.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 39 (39)             ; 52 (52)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pipes22May|VGA_SYNC:inst                                       ; VGA_SYNC    ; work         ;
+;    |pipes:inst3|                   ; 39.7 (39.7)          ; 40.9 (40.9)                      ; 1.1 (1.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 77 (77)             ; 30 (30)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pipes22May|pipes:inst3                                         ; pipes       ; work         ;
+;    |pll:inst1|                     ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pipes22May|pll:inst1                                           ; pll         ; pll          ;
+;       |pll_0002:pll_inst|          ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pipes22May|pll:inst1|pll_0002:pll_inst                         ; pll_0002    ; pll          ;
+;          |altera_pll:altera_pll_i| ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pipes22May|pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i ; altera_pll  ; work         ;
++------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1205,8 +1208,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name     ; Pin Type ; D1 ; D3_0 ; D3_1 ; D4 ; D5   ; D5 OE ; D5 OCT ; T11 (Postamble Gating) ; T11 (Postamble Ungating) ;
 +----------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 ; VGA_HS   ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; KEY[1]   ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[0]   ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; VGA_VS   ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; VGA_B[3] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; VGA_G[3] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
@@ -1220,22 +1221,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
-; KEY[1]              ;                   ;         ;
-; KEY[0]              ;                   ;         ;
 ; clk                 ;                   ;         ;
 +---------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                        ;
-+--------------------------------------------------------------------+---------------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                                               ; Location                  ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+--------------------------------------------------------------------+---------------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; VGA_SYNC:inst|Equal0~1                                             ; LABCELL_X20_Y44_N27       ; 12      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; VGA_SYNC:inst|process_0~8                                          ; LABCELL_X20_Y42_N30       ; 11      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; VGA_SYNC:inst|v_count[9]~0                                         ; LABCELL_X20_Y44_N6        ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ; PLLOUTPUTCOUNTER_X0_Y0_N1 ; 26      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-+--------------------------------------------------------------------+---------------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                                     ;
++--------------------------------------------------------------------+---------------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                               ; Location                  ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------------------------------------------------+---------------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; VGA_SYNC:inst|Equal0~1                                             ; LABCELL_X21_Y43_N51       ; 12      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst|LessThan6~0                                          ; MLABCELL_X23_Y43_N6       ; 12      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst|LessThan7~1                                          ; MLABCELL_X23_Y43_N21      ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst|process_0~7                                          ; MLABCELL_X23_Y43_N3       ; 12      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; VGA_SYNC:inst|v_count[9]~0                                         ; MLABCELL_X23_Y43_N0       ; 12      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; pipes:inst3|LessThan0~4                                            ; LABCELL_X20_Y42_N48       ; 30      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ; PLLOUTPUTCOUNTER_X0_Y0_N1 ; 82      ; Clock                     ; yes    ; Global Clock         ; GCLK3            ; --                        ;
++--------------------------------------------------------------------+---------------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1243,33 +1245,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------+---------------------------+---------+----------------------+------------------+---------------------------+
 ; Name                                                               ; Location                  ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------+---------------------------+---------+----------------------+------------------+---------------------------+
-; pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ; PLLOUTPUTCOUNTER_X0_Y0_N1 ; 26      ; Global Clock         ; GCLK3            ; --                        ;
+; pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ; PLLOUTPUTCOUNTER_X0_Y0_N1 ; 82      ; Global Clock         ; GCLK3            ; --                        ;
 +--------------------------------------------------------------------+---------------------------+---------+----------------------+------------------+---------------------------+
 
 
-+-------------------------------------------------------+
-; Routing Usage Summary                                 ;
-+------------------------------+------------------------+
-; Routing Resource Type        ; Usage                  ;
-+------------------------------+------------------------+
-; Block interconnects          ; 26 / 140,056 ( < 1 % ) ;
-; C12 interconnects            ; 0 / 6,048 ( 0 % )      ;
-; C2 interconnects             ; 6 / 54,648 ( < 1 % )   ;
-; C4 interconnects             ; 4 / 25,920 ( < 1 % )   ;
-; DQS bus muxes                ; 0 / 17 ( 0 % )         ;
-; DQS-18 I/O buses             ; 0 / 17 ( 0 % )         ;
-; DQS-9 I/O buses              ; 0 / 17 ( 0 % )         ;
-; Direct links                 ; 8 / 140,056 ( < 1 % )  ;
-; Global clocks                ; 1 / 16 ( 6 % )         ;
-; Local interconnects          ; 20 / 36,960 ( < 1 % )  ;
-; Quadrant clocks              ; 0 / 88 ( 0 % )         ;
-; R14 interconnects            ; 0 / 5,984 ( 0 % )      ;
-; R14/C12 interconnect drivers ; 0 / 9,504 ( 0 % )      ;
-; R3 interconnects             ; 10 / 60,192 ( < 1 % )  ;
-; R6 interconnects             ; 6 / 127,072 ( < 1 % )  ;
-; Spine clocks                 ; 1 / 120 ( < 1 % )      ;
-; Wire stub REs                ; 0 / 7,344 ( 0 % )      ;
-+------------------------------+------------------------+
++--------------------------------------------------------+
+; Routing Usage Summary                                  ;
++------------------------------+-------------------------+
+; Routing Resource Type        ; Usage                   ;
++------------------------------+-------------------------+
+; Block interconnects          ; 151 / 140,056 ( < 1 % ) ;
+; C12 interconnects            ; 0 / 6,048 ( 0 % )       ;
+; C2 interconnects             ; 23 / 54,648 ( < 1 % )   ;
+; C4 interconnects             ; 3 / 25,920 ( < 1 % )    ;
+; DQS bus muxes                ; 0 / 17 ( 0 % )          ;
+; DQS-18 I/O buses             ; 0 / 17 ( 0 % )          ;
+; DQS-9 I/O buses              ; 0 / 17 ( 0 % )          ;
+; Direct links                 ; 54 / 140,056 ( < 1 % )  ;
+; Global clocks                ; 1 / 16 ( 6 % )          ;
+; Local interconnects          ; 63 / 36,960 ( < 1 % )   ;
+; Quadrant clocks              ; 0 / 88 ( 0 % )          ;
+; R14 interconnects            ; 1 / 5,984 ( < 1 % )     ;
+; R14/C12 interconnect drivers ; 1 / 9,504 ( < 1 % )     ;
+; R3 interconnects             ; 47 / 60,192 ( < 1 % )   ;
+; R6 interconnects             ; 42 / 127,072 ( < 1 % )  ;
+; Spine clocks                 ; 1 / 120 ( < 1 % )       ;
+; Wire stub REs                ; 0 / 7,344 ( 0 % )       ;
++------------------------------+-------------------------+
 
 
 +------------------------------------------+
@@ -1327,13 +1329,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000034    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
-; Total Pass         ; 8         ; 0            ; 8         ; 0            ; 0            ; 8         ; 8         ; 0            ; 8         ; 8         ; 0            ; 5            ; 0            ; 0            ; 0            ; 0            ; 5            ; 0            ; 0            ; 0            ; 0            ; 5            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; Total Pass         ; 6         ; 0            ; 6         ; 0            ; 0            ; 6         ; 6         ; 0            ; 6         ; 6         ; 0            ; 5            ; 0            ; 0            ; 0            ; 0            ; 5            ; 0            ; 0            ; 0            ; 0            ; 5            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 8            ; 0         ; 8            ; 8            ; 0         ; 0         ; 8            ; 0         ; 0         ; 8            ; 3            ; 8            ; 8            ; 8            ; 8            ; 3            ; 8            ; 8            ; 8            ; 8            ; 3            ; 8            ; 8            ; 8            ; 8            ; 8            ; 8            ;
+; Total Inapplicable ; 0         ; 6            ; 0         ; 6            ; 6            ; 0         ; 0         ; 6            ; 0         ; 0         ; 6            ; 1            ; 6            ; 6            ; 6            ; 6            ; 1            ; 6            ; 6            ; 6            ; 6            ; 1            ; 6            ; 6            ; 6            ; 6            ; 6            ; 6            ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; VGA_HS             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; KEY[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; KEY[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; VGA_VS             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; VGA_B[3]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; VGA_G[3]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -1390,51 +1390,83 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+-------------------+
 ; Source Clock(s)                                                       ; Destination Clock(s)                                                  ; Delay Added in ns ;
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+-------------------+
-; inst1|pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inst1|pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 1.8               ;
+; inst1|pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inst1|pll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 5.4               ;
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+-------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                           ;
-+--------------------------+--------------------------+-------------------+
-; Source Register          ; Destination Register     ; Delay Added in ns ;
-+--------------------------+--------------------------+-------------------+
-; VGA_SYNC:inst|h_count[6] ; VGA_SYNC:inst|horiz_sync ; 0.330             ;
-; VGA_SYNC:inst|h_count[4] ; VGA_SYNC:inst|horiz_sync ; 0.330             ;
-; VGA_SYNC:inst|v_count[4] ; VGA_SYNC:inst|vert_sync  ; 0.284             ;
-; VGA_SYNC:inst|v_count[3] ; VGA_SYNC:inst|vert_sync  ; 0.224             ;
-; VGA_SYNC:inst|v_count[2] ; VGA_SYNC:inst|vert_sync  ; 0.198             ;
-; VGA_SYNC:inst|h_count[8] ; VGA_SYNC:inst|horiz_sync ; 0.183             ;
-; VGA_SYNC:inst|h_count[7] ; VGA_SYNC:inst|horiz_sync ; 0.183             ;
-; VGA_SYNC:inst|h_count[9] ; VGA_SYNC:inst|horiz_sync ; 0.183             ;
-; VGA_SYNC:inst|v_count[8] ; VGA_SYNC:inst|vert_sync  ; 0.139             ;
-; VGA_SYNC:inst|v_count[7] ; VGA_SYNC:inst|vert_sync  ; 0.139             ;
-; VGA_SYNC:inst|v_count[6] ; VGA_SYNC:inst|vert_sync  ; 0.139             ;
-; VGA_SYNC:inst|v_count[5] ; VGA_SYNC:inst|vert_sync  ; 0.139             ;
-; VGA_SYNC:inst|v_count[9] ; VGA_SYNC:inst|vert_sync  ; 0.139             ;
-; VGA_SYNC:inst|h_count[3] ; VGA_SYNC:inst|horiz_sync ; 0.072             ;
-+--------------------------+--------------------------+-------------------+
-Note: This table only shows the top 14 path(s) that have the largest delay added for hold.
++-------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                 ;
++-------------------------------+---------------------------+-------------------+
+; Source Register               ; Destination Register      ; Delay Added in ns ;
++-------------------------------+---------------------------+-------------------+
+; pipes:inst3|ball_x_pos[1]     ; pipes:inst3|ball_x_pos[4] ; 0.562             ;
+; pipes:inst3|ball_x_pos[3]     ; pipes:inst3|ball_x_pos[4] ; 0.562             ;
+; pipes:inst3|ball_x_pos[0]     ; pipes:inst3|ball_x_pos[4] ; 0.562             ;
+; pipes:inst3|ball_x_pos[2]     ; pipes:inst3|ball_x_pos[4] ; 0.562             ;
+; pipes:inst3|ball_x_pos[4]     ; pipes:inst3|ball_x_pos[4] ; 0.410             ;
+; pipes:inst3|ball_x_pos[9]     ; pipes:inst3|ball_x_pos[4] ; 0.365             ;
+; pipes:inst3|ball_x_pos[8]     ; pipes:inst3|ball_x_pos[4] ; 0.365             ;
+; pipes:inst3|ball_x_pos[7]     ; pipes:inst3|ball_x_pos[4] ; 0.365             ;
+; pipes:inst3|ball_x_pos[5]     ; pipes:inst3|ball_x_pos[4] ; 0.365             ;
+; pipes:inst3|ball_x_pos[6]     ; pipes:inst3|ball_x_pos[4] ; 0.365             ;
+; VGA_SYNC:inst|h_count[4]      ; VGA_SYNC:inst|horiz_sync  ; 0.313             ;
+; VGA_SYNC:inst|v_count[3]      ; VGA_SYNC:inst|vert_sync   ; 0.296             ;
+; VGA_SYNC:inst|video_on_v      ; VGA_SYNC:inst|red_out     ; 0.286             ;
+; VGA_SYNC:inst|h_count[3]      ; VGA_SYNC:inst|horiz_sync  ; 0.277             ;
+; VGA_SYNC:inst|v_count[7]      ; VGA_SYNC:inst|video_on_v  ; 0.265             ;
+; VGA_SYNC:inst|v_count[6]      ; VGA_SYNC:inst|video_on_v  ; 0.260             ;
+; VGA_SYNC:inst|video_on_h      ; VGA_SYNC:inst|red_out     ; 0.254             ;
+; VGA_SYNC:inst|pixel_column[1] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[0] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[9] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[8] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[7] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[6] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[5] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[4] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[3] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|pixel_column[2] ; VGA_SYNC:inst|red_out     ; 0.250             ;
+; VGA_SYNC:inst|h_count[7]      ; VGA_SYNC:inst|horiz_sync  ; 0.241             ;
+; VGA_SYNC:inst|h_count[9]      ; VGA_SYNC:inst|horiz_sync  ; 0.241             ;
+; VGA_SYNC:inst|h_count[8]      ; VGA_SYNC:inst|horiz_sync  ; 0.241             ;
+; VGA_SYNC:inst|v_count[5]      ; VGA_SYNC:inst|vert_sync   ; 0.207             ;
+; VGA_SYNC:inst|v_count[8]      ; VGA_SYNC:inst|vert_sync   ; 0.207             ;
+; VGA_SYNC:inst|v_count[9]      ; VGA_SYNC:inst|video_on_v  ; 0.193             ;
+; VGA_SYNC:inst|h_count[6]      ; VGA_SYNC:inst|horiz_sync  ; 0.071             ;
+; VGA_SYNC:inst|v_count[4]      ; VGA_SYNC:inst|vert_sync   ; 0.037             ;
+; VGA_SYNC:inst|v_count[1]      ; VGA_SYNC:inst|vert_sync   ; 0.037             ;
+; VGA_SYNC:inst|v_count[0]      ; VGA_SYNC:inst|vert_sync   ; 0.037             ;
+; VGA_SYNC:inst|pixel_row[8]    ; VGA_SYNC:inst|red_out     ; 0.037             ;
+; VGA_SYNC:inst|pixel_row[7]    ; VGA_SYNC:inst|red_out     ; 0.037             ;
+; VGA_SYNC:inst|pixel_row[5]    ; VGA_SYNC:inst|red_out     ; 0.037             ;
+; VGA_SYNC:inst|pixel_row[6]    ; VGA_SYNC:inst|red_out     ; 0.037             ;
+; VGA_SYNC:inst|pixel_row[4]    ; VGA_SYNC:inst|red_out     ; 0.037             ;
+; VGA_SYNC:inst|pixel_row[3]    ; VGA_SYNC:inst|red_out     ; 0.037             ;
+; VGA_SYNC:inst|pixel_row[2]    ; VGA_SYNC:inst|red_out     ; 0.037             ;
+; VGA_SYNC:inst|pixel_row[1]    ; VGA_SYNC:inst|red_out     ; 0.037             ;
++-------------------------------+---------------------------+-------------------+
+Note: This table only shows the top 45 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (119006): Selected device 5CEBA4F23C7 for design "Flappybirds_Top"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning: RST port on the PLL is not properly connected on instance pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
+Warning: RST port on the PLL is not properly connected on instance pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
     Info: Must be connected
 Warning (21300): LOCKED port on the PLL is not properly connected on instance "pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|general[0].gpll". The LOCKED port on the PLL should be connected when the FBOUTCLK port is connected. Although it is unnecessary to connect the LOCKED signal, any logic driven off of an output clock of the PLL will not know when the PLL is locked and ready.
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (184020): Starting Fitter periphery placement operations
 Info (11178): Promoted 1 clock (1 global)
-    Info (11162): pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0]~CLKENA0 with 24 fanout uses global clock CLKCTRL_G3
+    Info (11162): pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0]~CLKENA0 with 76 fanout uses global clock CLKCTRL_G3
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Flappybirds_Top.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained generated clocks found in the design
@@ -1607,6 +1639,8 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "HEX5[4]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX5[5]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX5[6]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "KEY[0]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "KEY[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "KEY[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "KEY[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDR[0]" is assigned to location or region, but does not exist in design
@@ -1649,7 +1683,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_R[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_R[2]" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:04
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:05
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
@@ -1663,24 +1697,24 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.27 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file C:/Users/ksha810/Downloads/Compsys305-main/Compsys305-main/Flappybirds/output_files/Flappybirds_Top.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 205 warnings
-    Info: Peak virtual memory: 6707 megabytes
-    Info: Processing ended: Thu May 18 14:06:05 2023
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:28
+Info (144001): Generated suppressed messages file C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/output_files/Flappybirds_Top.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 208 warnings
+    Info: Peak virtual memory: 6288 megabytes
+    Info: Processing ended: Tue May 23 15:14:06 2023
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/ksha810/Downloads/Compsys305-main/Compsys305-main/Flappybirds/output_files/Flappybirds_Top.fit.smsg.
+The suppressed messages can be found in C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/output_files/Flappybirds_Top.fit.smsg.
 
 

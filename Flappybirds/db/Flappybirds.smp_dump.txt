@@ -1,5 +1,5 @@
 
-State Machine - |mouse_design|MOUSE:inst4|mouse_state
+State Machine - |gameTesting|MOUSE:inst5|mouse_state
 Name mouse_state.INPUT_PACKETS mouse_state.WAIT_CMD_ACK mouse_state.WAIT_OUTPUT_READY mouse_state.LOAD_COMMAND2 mouse_state.LOAD_COMMAND mouse_state.INHIBIT_TRANS 
 mouse_state.INHIBIT_TRANS 0 0 0 0 0 0 
 mouse_state.LOAD_COMMAND 0 0 0 0 1 1 

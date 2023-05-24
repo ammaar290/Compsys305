@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu May 25 01:19:06 2023
+Analysis & Synthesis Status : Successful - Thu May 25 08:15:47 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Flappybirds_Top
-Top-level Entity Name : pipes22May
+Top-level Entity Name : gameTesting
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 117
-Total pins : 6
+Total registers : 195
+Total pins : 9
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

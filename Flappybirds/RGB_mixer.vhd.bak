@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity RGB_Mixer is
+    Port (
+        bird_red : in std_logic;
+        bird_green : in std_logic;
+        bird_blue : in std_logic;
+        pipes_red : in std_logic;
+        pipes_green : in std_logic;
+        pipes_blue : in std_logic;
+        red : out std_logic;
+        green : out std_logic;
+        blue : out std_logic
+    );
+end RGB_Mixer;
+
+architecture Behavior of RGB_Mixer is
+begin
+    red <= bird_red when bird_red = '0' else pipes_red;
+    green <= bird_green when bird_green = '0' else pipes_green;
+    blue <= bird_blue when bird_blue = '0' else pipes_blue;
+end Behavior;

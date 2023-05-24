@@ -1,13 +1,16 @@
-|pipes22May
+|gameTesting
 VGA_HS <= VGA_SYNC:inst.horiz_sync_out
 clk => pll:inst1.refclk
+PS2_DAT <> MOUSE:inst5.mouse_data
+PS2_CLK <> MOUSE:inst5.mouse_clk
 VGA_VS <= VGA_SYNC:inst.vert_sync_out
+LEDR[1] <= MOUSE:inst5.right_button
 VGA_B[3] <= VGA_SYNC:inst.blue_out
 VGA_G[3] <= VGA_SYNC:inst.green_out
 VGA_R[3] <= VGA_SYNC:inst.red_out
 
 
-|pipes22May|VGA_SYNC:inst
+|gameTesting|VGA_SYNC:inst
 clock_25Mhz => vert_sync_out~reg0.CLK
 clock_25Mhz => horiz_sync_out~reg0.CLK
 clock_25Mhz => blue_out~reg0.CLK
@@ -87,21 +90,21 @@ pixel_column[8] <= pixel_column[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pixel_column[9] <= pixel_column[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|pipes22May|pll:inst1
+|gameTesting|pll:inst1
 refclk => pll_0002:pll_inst.refclk
 rst => pll_0002:pll_inst.rst
 outclk_0 <= pll_0002:pll_inst.outclk_0
 locked <= pll_0002:pll_inst.locked
 
 
-|pipes22May|pll:inst1|pll_0002:pll_inst
+|gameTesting|pll:inst1|pll_0002:pll_inst
 refclk => refclk.IN1
 rst => rst.IN1
 outclk_0 <= altera_pll:altera_pll_i.outclk
 locked <= altera_pll:altera_pll_i.locked
 
 
-|pipes22May|pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i
+|gameTesting|pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i
 refclk => general[0].gpll.I_REFCLK
 refclk1 => ~NO_FANOUT~
 fbclk => ~NO_FANOUT~
@@ -273,7 +276,250 @@ cascade_out[0] <= <GND>
 zdbfbclk <> <GND>
 
 
-|pipes22May|pipes:inst3
+|gameTesting|RGB_Mixer:inst6
+ball_on => red.IN1
+ball_on => green.IN0
+ball_on_upper => red.IN0
+ball_on_upper => green.IN1
+ball_on_lower => red.IN1
+ball_on_lower => green.IN1
+red <= red.DB_MAX_OUTPUT_PORT_TYPE
+green <= green.DB_MAX_OUTPUT_PORT_TYPE
+blue <= green.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|gameTesting|bouncyBird:inst14
+pb1 => ball_y_motion[0].DATAIN
+pb1 => ball_y_motion[4].DATAIN
+pb1 => ball_y_motion[5].DATAIN
+pb1 => ball_y_motion[6].DATAIN
+pb1 => ball_y_motion[7].DATAIN
+pb1 => ball_y_motion[8].DATAIN
+pb1 => ball_y_motion[9].DATAIN
+pb1 => ball_y_motion[1].DATAIN
+pb2 => ~NO_FANOUT~
+clk => ~NO_FANOUT~
+vert_sync => ball_y_pos[0].CLK
+vert_sync => ball_y_pos[1].CLK
+vert_sync => ball_y_pos[2].CLK
+vert_sync => ball_y_pos[3].CLK
+vert_sync => ball_y_pos[4].CLK
+vert_sync => ball_y_pos[5].CLK
+vert_sync => ball_y_pos[6].CLK
+vert_sync => ball_y_pos[7].CLK
+vert_sync => ball_y_pos[8].CLK
+vert_sync => ball_y_pos[9].CLK
+vert_sync => ball_y_motion[0].CLK
+vert_sync => ball_y_motion[1].CLK
+vert_sync => ball_y_motion[2].CLK
+vert_sync => ball_y_motion[3].CLK
+vert_sync => ball_y_motion[4].CLK
+vert_sync => ball_y_motion[5].CLK
+vert_sync => ball_y_motion[6].CLK
+vert_sync => ball_y_motion[7].CLK
+vert_sync => ball_y_motion[8].CLK
+vert_sync => ball_y_motion[9].CLK
+pixel_row[0] => Add2.IN20
+pixel_row[0] => LessThan3.IN22
+pixel_row[1] => Add2.IN19
+pixel_row[1] => LessThan3.IN21
+pixel_row[2] => Add2.IN18
+pixel_row[2] => LessThan3.IN20
+pixel_row[3] => Add2.IN17
+pixel_row[3] => LessThan3.IN19
+pixel_row[4] => Add2.IN16
+pixel_row[4] => LessThan3.IN18
+pixel_row[5] => Add2.IN15
+pixel_row[5] => LessThan3.IN17
+pixel_row[6] => Add2.IN14
+pixel_row[6] => LessThan3.IN16
+pixel_row[7] => Add2.IN13
+pixel_row[7] => LessThan3.IN15
+pixel_row[8] => Add2.IN12
+pixel_row[8] => LessThan3.IN14
+pixel_row[9] => Add2.IN11
+pixel_row[9] => LessThan3.IN13
+pixel_column[0] => Add0.IN22
+pixel_column[0] => LessThan1.IN24
+pixel_column[1] => Add0.IN21
+pixel_column[1] => LessThan1.IN23
+pixel_column[2] => Add0.IN20
+pixel_column[2] => LessThan1.IN22
+pixel_column[3] => Add0.IN19
+pixel_column[3] => LessThan1.IN21
+pixel_column[4] => Add0.IN18
+pixel_column[4] => LessThan1.IN20
+pixel_column[5] => Add0.IN17
+pixel_column[5] => LessThan1.IN19
+pixel_column[6] => Add0.IN16
+pixel_column[6] => LessThan1.IN18
+pixel_column[7] => Add0.IN15
+pixel_column[7] => LessThan1.IN17
+pixel_column[8] => Add0.IN14
+pixel_column[8] => LessThan1.IN16
+pixel_column[9] => Add0.IN13
+pixel_column[9] => LessThan1.IN15
+ball <= ball_on.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|gameTesting|MOUSE:inst5
+clock_25Mhz => MOUSE_CLK_FILTER.CLK
+clock_25Mhz => filter[0].CLK
+clock_25Mhz => filter[1].CLK
+clock_25Mhz => filter[2].CLK
+clock_25Mhz => filter[3].CLK
+clock_25Mhz => filter[4].CLK
+clock_25Mhz => filter[5].CLK
+clock_25Mhz => filter[6].CLK
+clock_25Mhz => filter[7].CLK
+clock_25Mhz => CHAROUT[0].CLK
+clock_25Mhz => CHAROUT[1].CLK
+clock_25Mhz => CHAROUT[2].CLK
+clock_25Mhz => CHAROUT[3].CLK
+clock_25Mhz => CHAROUT[4].CLK
+clock_25Mhz => CHAROUT[5].CLK
+clock_25Mhz => CHAROUT[6].CLK
+clock_25Mhz => CHAROUT[7].CLK
+clock_25Mhz => send_data.CLK
+clock_25Mhz => inhibit_wait_count[0].CLK
+clock_25Mhz => inhibit_wait_count[1].CLK
+clock_25Mhz => inhibit_wait_count[2].CLK
+clock_25Mhz => inhibit_wait_count[3].CLK
+clock_25Mhz => inhibit_wait_count[4].CLK
+clock_25Mhz => inhibit_wait_count[5].CLK
+clock_25Mhz => inhibit_wait_count[6].CLK
+clock_25Mhz => inhibit_wait_count[7].CLK
+clock_25Mhz => inhibit_wait_count[8].CLK
+clock_25Mhz => inhibit_wait_count[9].CLK
+clock_25Mhz => inhibit_wait_count[10].CLK
+clock_25Mhz => inhibit_wait_count[11].CLK
+clock_25Mhz => mouse_state~7.DATAIN
+reset => right_button~reg0.ACLR
+reset => left_button~reg0.ACLR
+reset => PACKET_COUNT[0].ACLR
+reset => PACKET_COUNT[1].ACLR
+reset => READ_CHAR.ACLR
+reset => INCNT[0].ACLR
+reset => INCNT[1].ACLR
+reset => INCNT[2].ACLR
+reset => INCNT[3].ACLR
+reset => send_data.ACLR
+reset => inhibit_wait_count[0].ACLR
+reset => inhibit_wait_count[1].ACLR
+reset => inhibit_wait_count[2].ACLR
+reset => inhibit_wait_count[3].ACLR
+reset => inhibit_wait_count[4].ACLR
+reset => inhibit_wait_count[5].ACLR
+reset => inhibit_wait_count[6].ACLR
+reset => inhibit_wait_count[7].ACLR
+reset => inhibit_wait_count[8].ACLR
+reset => inhibit_wait_count[9].ACLR
+reset => inhibit_wait_count[10].ACLR
+reset => inhibit_wait_count[11].ACLR
+reset => mouse_state~9.DATAIN
+reset => CHAROUT[7].ENA
+reset => CHAROUT[6].ENA
+reset => CHAROUT[5].ENA
+reset => CHAROUT[4].ENA
+reset => CHAROUT[3].ENA
+reset => CHAROUT[2].ENA
+reset => CHAROUT[1].ENA
+reset => CHAROUT[0].ENA
+reset => iready_set.ENA
+reset => SHIFTIN[8].ENA
+reset => SHIFTIN[7].ENA
+reset => SHIFTIN[6].ENA
+reset => SHIFTIN[5].ENA
+reset => SHIFTIN[4].ENA
+reset => SHIFTIN[3].ENA
+reset => SHIFTIN[2].ENA
+reset => SHIFTIN[1].ENA
+reset => SHIFTIN[0].ENA
+reset => cursor_column[9].ENA
+reset => cursor_column[8].ENA
+reset => cursor_column[7].ENA
+reset => cursor_column[6].ENA
+reset => cursor_column[5].ENA
+reset => cursor_column[4].ENA
+reset => cursor_column[3].ENA
+reset => cursor_column[2].ENA
+reset => cursor_column[1].ENA
+reset => cursor_column[0].ENA
+reset => cursor_row[9].ENA
+reset => cursor_row[8].ENA
+reset => cursor_row[7].ENA
+reset => cursor_row[6].ENA
+reset => cursor_row[5].ENA
+reset => cursor_row[4].ENA
+reset => cursor_row[3].ENA
+reset => cursor_row[2].ENA
+reset => cursor_row[1].ENA
+reset => cursor_row[0].ENA
+reset => new_cursor_column[9].ENA
+reset => new_cursor_column[8].ENA
+reset => new_cursor_column[7].ENA
+reset => new_cursor_column[6].ENA
+reset => new_cursor_column[5].ENA
+reset => new_cursor_column[4].ENA
+reset => new_cursor_column[3].ENA
+reset => new_cursor_column[2].ENA
+reset => new_cursor_column[1].ENA
+reset => new_cursor_column[0].ENA
+reset => new_cursor_row[9].ENA
+reset => new_cursor_row[8].ENA
+reset => new_cursor_row[7].ENA
+reset => new_cursor_row[6].ENA
+reset => new_cursor_row[5].ENA
+reset => new_cursor_row[4].ENA
+reset => new_cursor_row[3].ENA
+reset => new_cursor_row[2].ENA
+reset => new_cursor_row[1].ENA
+reset => PACKET_CHAR3[0].ENA
+reset => new_cursor_row[0].ENA
+reset => PACKET_CHAR1[1].ENA
+reset => PACKET_CHAR1[0].ENA
+reset => PACKET_CHAR2[7].ENA
+reset => PACKET_CHAR2[6].ENA
+reset => PACKET_CHAR2[5].ENA
+reset => PACKET_CHAR2[4].ENA
+reset => PACKET_CHAR2[3].ENA
+reset => PACKET_CHAR2[2].ENA
+reset => PACKET_CHAR2[1].ENA
+reset => PACKET_CHAR2[0].ENA
+reset => PACKET_CHAR3[7].ENA
+reset => PACKET_CHAR3[6].ENA
+reset => PACKET_CHAR3[5].ENA
+reset => PACKET_CHAR3[4].ENA
+reset => PACKET_CHAR3[3].ENA
+reset => PACKET_CHAR3[2].ENA
+reset => PACKET_CHAR3[1].ENA
+mouse_data <> mouse_data
+mouse_clk <> mouse_clk
+left_button <= left_button~reg0.DB_MAX_OUTPUT_PORT_TYPE
+right_button <= right_button~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[0] <= cursor_row[0].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[1] <= cursor_row[1].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[2] <= cursor_row[2].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[3] <= cursor_row[3].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[4] <= cursor_row[4].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[5] <= cursor_row[5].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[6] <= cursor_row[6].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[7] <= cursor_row[7].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[8] <= cursor_row[8].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_row[9] <= cursor_row[9].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[0] <= cursor_column[0].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[1] <= cursor_column[1].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[2] <= cursor_column[2].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[3] <= cursor_column[3].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[4] <= cursor_column[4].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[5] <= cursor_column[5].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[6] <= cursor_column[6].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[7] <= cursor_column[7].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[8] <= cursor_column[8].DB_MAX_OUTPUT_PORT_TYPE
+mouse_cursor_column[9] <= cursor_column[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|gameTesting|pipes:inst13
 clk => counter[0].CLK
 clk => counter[1].CLK
 clk => counter[2].CLK
@@ -464,8 +710,7 @@ pixel_column[9] => LessThan14.IN1
 pixel_column[9] => LessThan15.IN13
 pixel_column[9] => LessThan16.IN1
 pixel_column[9] => LessThan17.IN13
-red <= red.DB_MAX_OUTPUT_PORT_TYPE
-green <= <VCC>
-blue <= red.DB_MAX_OUTPUT_PORT_TYPE
+ball_on_upper <= ball_on_upper.DB_MAX_OUTPUT_PORT_TYPE
+ball_on_lower <= ball_on_lower.DB_MAX_OUTPUT_PORT_TYPE
 
 

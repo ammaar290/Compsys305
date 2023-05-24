@@ -1,4 +1,4 @@
-LIBRARY IEEE;
+ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.all;
 USE  IEEE.STD_LOGIC_ARITH.all;
 USE  IEEE.STD_LOGIC_SIGNED.all;
@@ -8,7 +8,7 @@ ENTITY bouncyBird IS
 	PORT
 		( pb1, pb2, clk, vert_sync	: IN std_logic;
           pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
-		  red, green, blue 			: OUT std_logic);		
+		  ball : OUT std_logic);
 END bouncyBird;
 
 architecture behavior of bouncyBird is
@@ -18,7 +18,7 @@ SIGNAL size 					: std_logic_vector(9 DOWNTO 0);
 SIGNAL ball_y_pos				: std_logic_vector(9 DOWNTO 0);
 SIGNAL ball_y_pos_T				: std_logic_vector(9 DOWNTO 0);
 SiGNAL ball_x_pos				: std_logic_vector(10 DOWNTO 0);
-SIGNAL ball_y_motion			: std_logic_vector(9 DOWNTO 0);
+SIGNAL ball_y_motion			: std_logic_vector(9 DOWNTO 0):= CONV_STD_LOGIC_VECTOR(10, 10) ;
 
 BEGIN           
 
@@ -36,9 +36,9 @@ ball_on <= '1' when ( ('0' & ball_x_pos <= '0' & pixel_column + size) and ('0' &
 
 -- Colours for pixel data on video signal
 -- Changing the background and ball colour by pushbuttons
-Red <=  ball_on;
-Green <= ball_on;
-Blue <=  ball_on;
+--Red <=  '0';
+--Green <= ball_on;
+--Blue <=  '0';
 
 
 Move_Ball: process (vert_sync)  	
@@ -53,27 +53,29 @@ begin
 		-- If pb1 is pressed, return ball_y_motion a process 
 		
 		if(pb1 = '1') then
-			ball_y_motion <= CONV_STD_LOGIC_VECTOR(5,10);
+			ball_y_motion <= -CONV_STD_LOGIC_VECTOR(15,10);
 			
 		else
-			ball_y_motion <= ball_y_motion - CONV_STD_LOGIC_VECTOR(1,10);
+			ball_y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
 		end if;
 		
 		-- checks for height floor bypass
-		if(ball_y_pos <= "0111000010") then
-			ball_y_pos_T <= "0110000000";
-		else
-			ball_y_pos_T <= ball_y_pos + ball_y_motion;
-		end if;
+--		if (ball_y_pos <= CONV_STD_LOGIC_VECTOR(460,10) - size) then
+--			ball_y_motion <= CONV_STD_LOGIC_VECTOR(3,10);
+--		end if;
 		
 		
-		ball_y_pos <= ball_y_pos_T;
+		ball_y_pos <= ball_y_pos + ball_y_motion;
 		
 		
 		
 		
 		
 	end if;
+	
+
+	ball <= ball_on;
+	
 end process Move_Ball;
 
 

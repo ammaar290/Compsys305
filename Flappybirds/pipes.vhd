@@ -11,43 +11,67 @@ END pipes;
 
 architecture behavior of pipes is
 
-SIGNAL ball_on  : std_logic;
+SIGNAL ball_on_upper, ball_on_lower  : std_logic;
 SIGNAL sizex    : std_logic_vector(9 DOWNTO 0);  
-SIGNAL sizey    : std_logic_vector(9 DOWNTO 0); 
-SIGNAL ball_y_pos, ball_x_pos : std_logic_vector(9 DOWNTO 0) := std_logic_vector(to_unsigned(590,10)); -- Initialize at right edge of screen
+SIGNAL ball_y_pos_upper, ball_y_pos_lower : std_logic_vector(9 DOWNTO 0);
+TYPE array_type is ARRAY (1 to 5) of std_logic_vector(9 DOWNTO 0);
+SIGNAL x_pos_arr : array_type;
 SIGNAL counter : integer range 0 to 333333 := 0;
+SIGNAL init_done: std_logic := '0';
 
 BEGIN           
 
 sizex <= std_logic_vector(to_unsigned(20,10));  
-sizey <= std_logic_vector(to_unsigned(200,10));
-ball_y_pos <= std_logic_vector(to_unsigned(350,10));
+ball_y_pos_upper <= std_logic_vector(to_unsigned(150,10));
+ball_y_pos_lower <= std_logic_vector(to_unsigned(250,10));
 
-process (clk)  -- New process to update ball_x_pos
+process (clk)
 begin
     if rising_edge(clk) then
-        counter <= counter + 1;  -- Increment the counter
+        if init_done = '0' then
+            x_pos_arr(1) <= std_logic_vector(to_unsigned(590,10));
+            x_pos_arr(2) <= std_logic_vector(to_unsigned(480,10));
+            x_pos_arr(3) <= std_logic_vector(to_unsigned(370,10));
+            x_pos_arr(4) <= std_logic_vector(to_unsigned(260,10));
+            x_pos_arr(5) <= std_logic_vector(to_unsigned(150,10));
+            init_done <= '1';
+        else
+            counter <= counter + 1;  -- Increment the counter
 
-        if counter >= 333333 then  -- If the counter reaches 333333...
-            if unsigned(ball_x_pos) <= to_unsigned(0,10) then  -- If the pipe has moved to the left edge of the screen...
-                ball_x_pos <= std_logic_vector(to_unsigned(590,10));  -- Reset the pipe's x-coordinate to its starting position
-            else
-                ball_x_pos <= std_logic_vector(unsigned(ball_x_pos) - 1);  -- Move the pipe one pixel to the left
+            if counter >= 333333 then  -- If the counter reaches 333333...
+                for i in 1 to 5 loop
+                    if unsigned(x_pos_arr(i)) <= to_unsigned(0,10) then  -- If the pipe has moved to the left edge of the screen...
+                        x_pos_arr(i) <= std_logic_vector(to_unsigned(590,10));  -- Reset the pipe's x-coordinate to its starting position
+                    else
+                        x_pos_arr(i) <= std_logic_vector(unsigned(x_pos_arr(i)) - 1);  -- Move the pipe one pixel to the left
+                    end if;
+                end loop;
+                counter <= 0;  -- Reset the counter after moving the pipe
             end if;
-            counter <= 0;  -- Reset the counter after moving the pipe
         end if;
     end if;
 end process;
 
-ball_on <= '1' when ( (unsigned('0' & ball_x_pos) <= unsigned(pixel_column) + unsigned(sizex)) and (unsigned('0' & pixel_column) <= unsigned(ball_x_pos) + unsigned(sizex))  -- x_pos - size <= pixel_column <= x_pos + size
-                    and (unsigned('0' & ball_y_pos) <= unsigned(pixel_row) + unsigned(sizey)) and (unsigned('0' & pixel_row) <= unsigned(ball_y_pos) + unsigned(sizey)) )  else    -- y_pos - size <= pixel_row <= y_pos + size
-            '0';
+process (pixel_row, pixel_column)
+begin
+    ball_on_upper <= '0';
+    ball_on_lower <= '0';
+    for i in 1 to 5 loop
+        if ( unsigned('0' & x_pos_arr(i)) <= unsigned(pixel_column)
+            and unsigned(pixel_column) < unsigned('0' & x_pos_arr(i)) + unsigned(sizex)
+            and unsigned(pixel_row) < unsigned(ball_y_pos_upper)) then
+            ball_on_upper <= '1';
+        elsif ( unsigned('0' & x_pos_arr(i)) <= unsigned(pixel_column)
+                and unsigned(pixel_column) < unsigned('0' & x_pos_arr(i)) + unsigned(sizex)
+                and unsigned(pixel_row) >= unsigned(ball_y_pos_lower)) then
+            ball_on_lower <= '1';
+        end if;
+    end loop;
+end process;
 
--- Colours for pixel data on video signal
--- Keeping background white and square in red
-Red <=  not ball_on;
--- Turn off Green and Blue when displaying square
+-- Pipes in Green
+Red <= not (ball_on_upper or ball_on_lower);
 Green <= '1';
-Blue <=  not ball_on;
+Blue <= not (ball_on_upper or ball_on_lower);
 
 END behavior;

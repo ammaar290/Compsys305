@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Flappybirds_Top
-Tue May 23 15:13:48 2023
+Thu May 25 01:19:06 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -16,12 +16,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   8. Analysis & Synthesis IP Cores Summary
   9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -47,13 +46,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May 23 15:13:48 2023       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 25 01:19:06 2023       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Flappybirds_Top                             ;
 ; Top-level Entity Name           ; pipes22May                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 76                                          ;
+; Total registers                 ; 117                                         ;
 ; Total pins                      ; 6                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -190,16 +189,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                              ;
 +---------------------------------------------+--------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 65                                                                 ;
+; Estimate of Logic utilization (ALMs needed) ; 173                                                                ;
 ;                                             ;                                                                    ;
-; Combinational ALUT usage for logic          ; 116                                                                ;
-;     -- 7 input functions                    ; 1                                                                  ;
-;     -- 6 input functions                    ; 9                                                                  ;
-;     -- 5 input functions                    ; 15                                                                 ;
-;     -- 4 input functions                    ; 12                                                                 ;
-;     -- <=3 input functions                  ; 79                                                                 ;
+; Combinational ALUT usage for logic          ; 306                                                                ;
+;     -- 7 input functions                    ; 0                                                                  ;
+;     -- 6 input functions                    ; 37                                                                 ;
+;     -- 5 input functions                    ; 41                                                                 ;
+;     -- 4 input functions                    ; 50                                                                 ;
+;     -- <=3 input functions                  ; 178                                                                ;
 ;                                             ;                                                                    ;
-; Dedicated logic registers                   ; 76                                                                 ;
+; Dedicated logic registers                   ; 117                                                                ;
 ;                                             ;                                                                    ;
 ; I/O pins                                    ; 6                                                                  ;
 ;                                             ;                                                                    ;
@@ -209,9 +208,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                  ;
 ;                                             ;                                                                    ;
 ; Maximum fan-out node                        ; pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 77                                                                 ;
-; Total fan-out                               ; 584                                                                ;
-; Average fan-out                             ; 2.85                                                               ;
+; Maximum fan-out                             ; 118                                                                ;
+; Total fan-out                               ; 1399                                                               ;
+; Average fan-out                             ; 3.21                                                               ;
 +---------------------------------------------+--------------------------------------------------------------------+
 
 
@@ -220,9 +219,9 @@ refer to the applicable agreement for further details.
 +------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name ; Library Name ;
 +------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+-------------+--------------+
-; |pipes22May                        ; 116 (0)             ; 76 (0)                    ; 0                 ; 0          ; 6    ; 0            ; |pipes22May                                                     ; pipes22May  ; work         ;
-;    |VGA_SYNC:inst|                 ; 39 (39)             ; 47 (47)                   ; 0                 ; 0          ; 0    ; 0            ; |pipes22May|VGA_SYNC:inst                                       ; VGA_SYNC    ; work         ;
-;    |pipes:inst3|                   ; 77 (77)             ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |pipes22May|pipes:inst3                                         ; pipes       ; work         ;
+; |pipes22May                        ; 306 (1)             ; 117 (0)                   ; 0                 ; 0          ; 6    ; 0            ; |pipes22May                                                     ; pipes22May  ; work         ;
+;    |VGA_SYNC:inst|                 ; 40 (40)             ; 47 (47)                   ; 0                 ; 0          ; 0    ; 0            ; |pipes22May|VGA_SYNC:inst                                       ; VGA_SYNC    ; work         ;
+;    |pipes:inst3|                   ; 265 (265)           ; 70 (70)                   ; 0                 ; 0          ; 0    ; 0            ; |pipes22May|pipes:inst3                                         ; pipes       ; work         ;
 ;    |pll:inst1|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pipes22May|pll:inst1                                           ; pll         ; pll          ;
 ;       |pll_0002:pll_inst|          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pipes22May|pll:inst1|pll_0002:pll_inst                         ; pll_0002    ; pll          ;
 ;          |altera_pll:altera_pll_i| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |pipes22May|pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i ; altera_pll  ; work         ;
@@ -244,8 +243,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; VGA_SYNC:inst|pixel_row[9]            ; Stuck at GND due to stuck port data_in ;
 ; VGA_SYNC:inst|pixel_row[0]            ; Lost fanout                            ;
+; VGA_SYNC:inst|pixel_row[9]            ; Stuck at GND due to stuck port data_in ;
 ; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
@@ -255,37 +254,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 76    ;
-; Number of registers using Synchronous Clear  ; 39    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 117   ;
+; Number of registers using Synchronous Clear  ; 47    ;
+; Number of registers using Synchronous Load   ; 10    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 38    ;
+; Number of registers using Clock Enable       ; 97    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; pipes:inst3|ball_x_pos[2]              ; 5       ;
-; pipes:inst3|ball_x_pos[1]              ; 4       ;
-; pipes:inst3|ball_x_pos[6]              ; 5       ;
-; pipes:inst3|ball_x_pos[3]              ; 4       ;
-; pipes:inst3|ball_x_pos[9]              ; 5       ;
-; Total number of inverted registers = 5 ;         ;
-+----------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |pipes22May|VGA_SYNC:inst|v_count[9] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |pipes22May|VGA_SYNC:inst|v_count[1]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[1][0] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[1][9] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[2][0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[2][5] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[3][0] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[3][1] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[4][9] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[4][2] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[5][5] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |pipes22May|pipes:inst3|x_pos_arr[5][4] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -540,28 +535,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 76                          ;
-;     ENA               ; 28                          ;
-;     ENA SCLR          ; 10                          ;
-;     SCLR              ; 29                          ;
-;     plain             ; 9                           ;
-; arriav_lcell_comb     ; 116                         ;
-;     arith             ; 63                          ;
-;         1 data inputs ; 61                          ;
-;         2 data inputs ; 2                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 52                          ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 12                          ;
-;         5 data inputs ; 15                          ;
-;         6 data inputs ; 9                           ;
+; arriav_ff             ; 117                         ;
+;     ENA               ; 50                          ;
+;     ENA SCLR          ; 37                          ;
+;     ENA SLD           ; 10                          ;
+;     SCLR              ; 10                          ;
+;     plain             ; 10                          ;
+; arriav_lcell_comb     ; 306                         ;
+;     arith             ; 129                         ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 119                         ;
+;         2 data inputs ; 5                           ;
+;     normal            ; 177                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 50                          ;
+;         5 data inputs ; 41                          ;
+;         6 data inputs ; 37                          ;
 ; boundary_port         ; 6                           ;
 ; generic_pll           ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 2.71                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.66                        ;
 +-----------------------+-----------------------------+
 
 
@@ -580,7 +576,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May 23 15:13:36 2023
+    Info: Processing started: Thu May 25 01:18:54 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Flappybirds -c Flappybirds_Top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -710,6 +706,14 @@ Info (12133): Instantiated megafunction "pll:inst1|pll_0002:pll_inst|altera_pll:
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
 Info (12128): Elaborating entity "pipes" for hierarchy "pipes:inst3"
+Warning (10492): VHDL Process Statement warning at pipes.vhd(60): signal "x_pos_arr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/pipes.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at pipes.vhd(61): signal "x_pos_arr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/pipes.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at pipes.vhd(61): signal "sizex" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/pipes.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at pipes.vhd(62): signal "ball_y_pos_upper" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/pipes.vhd Line: 62
+Warning (10492): VHDL Process Statement warning at pipes.vhd(64): signal "x_pos_arr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/pipes.vhd Line: 64
+Warning (10492): VHDL Process Statement warning at pipes.vhd(65): signal "x_pos_arr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/pipes.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at pipes.vhd(65): signal "sizex" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/pipes.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at pipes.vhd(66): signal "ball_y_pos_lower" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Khaled/OneDrive/Documents/GitHub/Compsys305/Flappybirds/pipes.vhd Line: 66
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity does not exist in design
@@ -741,15 +745,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning: RST port on the PLL is not properly connected on instance pll:inst1|pll_0002:pll_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
     Info: Must be connected
-Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 339 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 141 logic cells
+    Info (21061): Implemented 332 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4851 megabytes
-    Info: Processing ended: Tue May 23 15:13:48 2023
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 4852 megabytes
+    Info: Processing ended: Thu May 25 01:19:06 2023
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Total CPU time (on all processors): 00:00:24
 
 
